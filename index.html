@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epic Shawarma & Grills — The Shawarma You'll Crave Again | Uyo</title>
+<meta name="description" content="Epic Shawarma & Grills in Uyo — beef, chicken, special and jumbo shawarma, grills and loaded combos. Rated 4.7/5 by 36+ Google reviewers. Order now on WhatsApp for fast delivery.">
+<meta property="og:title" content="Epic Shawarma & Grills — Uyo's Craveable Shawarma">
+<meta property="og:description" content="Freshly made shawarma, grills and loaded combos in Uyo. Order on WhatsApp for fast delivery.">
+<meta property="og:type" content="restaurant.menu">
+<meta property="og:image" content="assets/shawarma-loaded.webp">
+<link rel="icon" type="image/webp" href="assets/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c130d;
+    --red:#b5222a;
+    --red-deep:#8c1a20;
+    --gold:#f4b400;
+    --orange:#e2751c;
+    --cream:#fff6e6;
+    --paper:#fffdf8;
+    --brown:#5a3220;
+    --line:rgba(28,19,13,0.12);
+    --shadow:0 14px 30px rgba(28,19,13,0.16);
+    --radius:22px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Work Sans', sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .display{font-family:'Anton', sans-serif; font-weight:400; letter-spacing:0.01em; line-height:0.95;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 20px;}
+  .eyebrow{font-size:0.8rem; font-weight:700; color:var(--red); letter-spacing:0.02em;}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:16px 26px; border-radius:100px;
+    font-weight:700; font-size:1rem; border:2px solid transparent;
+    cursor:pointer; white-space:nowrap;
+  }
+  .btn-primary{ background:var(--red); color:#fff; box-shadow:0 10px 22px rgba(181,34,42,0.35); }
+  .btn-primary:active{ transform:translateY(1px); }
+  .btn-gold{ background:var(--gold); color:var(--ink); box-shadow:0 10px 22px rgba(244,180,0,0.35); }
+  .btn-outline{ background:transparent; color:var(--ink); border-color:var(--ink); }
+  .btn-outline-light{ background:transparent; color:#fff; border-color:rgba(255,255,255,0.55); }
+  .btn-block{ width:100%; justify-content:center; }
+
+  /* Header */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:var(--ink);
+    padding:10px 0;
+  }
+  .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand img{ height:44px; width:44px; object-fit:contain; border-radius:10px; background:#fff; padding:3px; }
+  .brand span{ color:#fff; font-family:'Anton',sans-serif; font-size:1.05rem; letter-spacing:0.01em; }
+  .topbar .btn{ padding:10px 16px; font-size:0.85rem; }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:#fff;
+    padding:34px 0 0;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(120% 90% at 8% -10%, rgba(226,117,28,0.55), transparent 55%),
+      radial-gradient(90% 70% at 100% 0%, rgba(181,34,42,0.5), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-inner{ position:relative; z-index:1; }
+  .hero h1{
+    font-size:2.7rem;
+    margin:14px 0 12px;
+    text-transform:uppercase;
+  }
+  .hero h1 em{ font-style:normal; color:var(--gold); }
+  .hero p.lede{
+    font-size:1.08rem; color:rgba(255,255,255,0.86); max-width:32ch;
+    margin:0 0 24px;
+  }
+  .hero-ctas{ display:flex; flex-direction:column; gap:12px; margin-bottom:20px; }
+  .trust-chip{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);
+    padding:9px 16px; border-radius:100px; font-size:0.85rem; font-weight:600;
+    margin-bottom:26px;
+  }
+  .hero-photo{
+    position:relative;
+    margin:0 -20px;
+    border-radius:28px 28px 0 0;
+    overflow:hidden;
+  }
+  .hero-photo img{ width:100%; height:56vw; max-height:420px; object-fit:cover; }
+  .hero-photo::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%);
+  }
+  .hero-photo .cap{
+    position:absolute; left:20px; bottom:16px; z-index:2;
+    color:#fff; font-weight:700; font-size:0.85rem;
+    display:flex; align-items:center; gap:8px;
+  }
+  .cap .dot{ width:8px; height:8px; border-radius:50%; background:var(--gold); }
+
+  section{ padding:56px 0; }
+  h2.section-title{
+    font-size:2rem; text-transform:uppercase; margin:0 0 8px;
+  }
+  p.section-sub{ color:#5c4c40; font-size:1rem; margin:0 0 28px; max-width:42ch; }
+
+  /* Feature cards */
+  .features{ display:grid; grid-template-columns:1fr; gap:14px; }
+  .feature-card{
+    background:var(--cream);
+    border-radius:var(--radius);
+    padding:22px;
+    display:flex; gap:16px; align-items:flex-start;
+    border:1px solid var(--line);
+  }
+  .feature-card .icon{
+    flex:none; width:52px; height:52px; border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.5rem;
+    background:var(--ink);
+  }
+  .feature-card h3{ margin:0 0 4px; font-size:1.05rem; }
+  .feature-card p{ margin:0; color:#5c4c40; font-size:0.92rem; line-height:1.5; }
+
+  /* Best sellers - ticket style, no stock photos, bold color+type */
+  .bestsellers-wrap{ background:var(--ink); color:#fff; }
+  .bestsellers-wrap .section-sub{ color:rgba(255,255,255,0.7); }
+  .ticket-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+  .ticket{
+    position:relative;
+    border-radius:18px;
+    padding:24px 22px 22px;
+    background:linear-gradient(135deg, var(--red) 0%, var(--red-deep) 100%);
+    overflow:hidden;
+  }
+  .ticket.gold{ background:linear-gradient(135deg, var(--gold) 0%, #d99a00 100%); color:var(--ink); }
+  .ticket.orange{ background:linear-gradient(135deg, var(--orange) 0%, #b95c12 100%); }
+  .ticket.brown{ background:linear-gradient(135deg, var(--brown) 0%, #3a1f14 100%); }
+  .ticket::after{
+    content:"";
+    position:absolute; right:-30px; top:-30px;
+    width:140px; height:140px; border-radius:50%;
+    background:rgba(255,255,255,0.08);
+  }
+  .ticket .name{ font-family:'Anton',sans-serif; font-size:1.35rem; text-transform:uppercase; margin:0 0 6px; position:relative; z-index:1; }
+  .ticket .desc{ font-size:0.9rem; opacity:0.92; margin:0 0 18px; max-width:34ch; position:relative; z-index:1; }
+  .ticket .price-row{ display:flex; align-items:center; justify-content:space-between; position:relative; z-index:1; }
+  .ticket .price{ font-family:'Anton',sans-serif; font-size:1.6rem; }
+  .ticket .order-btn{
+    background:rgba(0,0,0,0.28); color:#fff; border-radius:100px;
+    padding:10px 18px; font-weight:700; font-size:0.85rem; white-space:nowrap;
+  }
+  .ticket.gold .order-btn{ background:rgba(0,0,0,0.16); color:var(--ink); }
+  .note-strip{
+    margin-top:22px; padding:14px 18px; border-radius:14px;
+    background:rgba(255,255,255,0.08); border:1px dashed rgba(255,255,255,0.3);
+    font-size:0.88rem; color:rgba(255,255,255,0.85);
+  }
+
+  /* Full menu */
+  .menu-flyer-card{
+    border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
+    border:1px solid var(--line);
+  }
+  .menu-flyer-card img{ width:100%; display:block; }
+  .menu-categories{ display:flex; flex-wrap:wrap; gap:8px; margin:22px 0; }
+  .cat-pill{
+    padding:9px 16px; border-radius:100px; font-size:0.85rem; font-weight:600;
+    border:1.5px solid var(--ink); color:var(--ink);
+  }
+  .menu-cta{
+    margin-top:20px; padding:20px; border-radius:18px;
+    background:var(--cream); border:1px solid var(--line);
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .menu-cta p{ margin:0; font-size:0.92rem; color:#5c4c40; }
+
+  /* Gallery */
+  .gallery-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .gallery-grid .g-photo{ grid-column:span 2; border-radius:18px; overflow:hidden; }
+  .gallery-grid .g-photo img{ width:100%; height:260px; object-fit:cover; }
+  .gallery-tile{
+    border-radius:18px; padding:20px; display:flex; flex-direction:column; justify-content:flex-end;
+    min-height:120px; color:#fff;
+  }
+  .gallery-tile.a{ background:linear-gradient(135deg,var(--red),var(--red-deep)); }
+  .gallery-tile.b{ background:linear-gradient(135deg,var(--orange),#b95c12); }
+  .gallery-tile span{ font-family:'Anton',sans-serif; text-transform:uppercase; font-size:1rem; }
+  .ig-strip{
+    margin-top:16px; display:flex; align-items:center; justify-content:space-between;
+    gap:12px; padding:18px; border-radius:16px; background:var(--ink); color:#fff;
+  }
+  .ig-strip .handle{ font-weight:700; }
+  .ig-strip small{ display:block; color:rgba(255,255,255,0.65); font-weight:400; margin-top:2px; }
+
+  /* Reviews */
+  .reviews-header{ display:flex; align-items:center; gap:14px; margin-bottom:22px; flex-wrap:wrap; }
+  .rating-badge{
+    background:var(--gold); border-radius:16px; padding:14px 18px; text-align:center;
+  }
+  .rating-badge .num{ font-family:'Anton',sans-serif; font-size:1.8rem; line-height:1; }
+  .rating-badge .stars{ color:var(--red); letter-spacing:2px; margin:4px 0; }
+  .rating-badge .count{ font-size:0.75rem; font-weight:600; }
+  .review-card{
+    background:var(--cream); border-radius:18px; padding:20px; margin-bottom:12px;
+    border:1px solid var(--line);
+  }
+  .review-card .stars{ color:var(--gold); letter-spacing:2px; margin-bottom:8px; }
+  .review-card p{ margin:0 0 10px; font-size:0.95rem; line-height:1.55; }
+  .review-card .who{ font-size:0.85rem; font-weight:700; color:var(--brown); }
+  .review-card .who small{ font-weight:400; color:#8a7466; margin-left:6px; }
+
+  /* Craving section */
+  .craving{
+    background:linear-gradient(135deg, var(--red) 0%, var(--red-deep) 100%);
+    color:#fff; text-align:left; border-radius:28px; margin:0 20px;
+    padding:40px 26px;
+  }
+  .craving h2{ font-size:2.1rem; text-transform:uppercase; margin:0 0 10px; }
+  .craving p{ font-size:1.02rem; opacity:0.92; margin:0 0 22px; max-width:32ch; }
+  .craving .phone-line{ margin-top:18px; font-size:0.9rem; opacity:0.85; }
+
+  /* Location */
+  .location-card{ background:var(--cream); border-radius:var(--radius); padding:24px; border:1px solid var(--line); }
+  .location-card .addr{ font-size:1.05rem; font-weight:700; margin:0 0 4px; }
+  .location-card .hours{ font-size:0.9rem; color:#5c4c40; margin:0 0 20px; }
+  .loc-buttons{ display:grid; grid-template-columns:1fr; gap:10px; }
+
+  /* Footer */
+  footer{ background:var(--ink); color:#fff; padding:40px 0 100px; }
+  .footer-top{ display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+  .footer-top img{ height:48px; width:48px; border-radius:12px; background:#fff; padding:4px; }
+  .footer-top .fname{ font-family:'Anton',sans-serif; font-size:1.2rem; text-transform:uppercase; }
+  footer .flinks{ display:flex; flex-direction:column; gap:10px; font-size:0.92rem; color:rgba(255,255,255,0.78); margin-bottom:24px; }
+  footer .flinks a{ display:flex; align-items:center; gap:10px; }
+  footer .copyline{ font-size:0.78rem; color:rgba(255,255,255,0.4); border-top:1px solid rgba(255,255,255,0.1); padding-top:18px; }
+
+  /* Sticky mobile order bar */
+  .sticky-order{
+    position:fixed; left:0; right:0; bottom:0; z-index:60;
+    background:var(--ink); padding:12px 16px;
+    box-shadow:0 -8px 24px rgba(0,0,0,0.25);
+    display:flex; gap:10px; align-items:center;
+  }
+  .sticky-order .btn{ flex:1; }
+  .sticky-order .call-btn{
+    flex:none; width:52px; height:52px; border-radius:50%;
+    background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center;
+    font-size:1.3rem; color:#fff;
+  }
+
+  @media (min-width: 860px){
+    .hero-inner{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:center; padding-bottom:40px; }
+    .hero h1{ font-size:3.6rem; }
+    .hero-photo{ margin:0; border-radius:28px; align-self:stretch; }
+    .hero-photo img{ height:100%; max-height:none; }
+    .hero-ctas{ flex-direction:row; }
+    .features{ grid-template-columns:repeat(4,1fr); }
+    .ticket-grid{ grid-template-columns:repeat(4,1fr); }
+    .loc-buttons{ grid-template-columns:repeat(3,1fr); }
+    section{ padding:80px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <img src="assets/logo.webp" alt="Epic Shawarma & Grills logo">
+      <span>EPIC SHAWARMA</span>
+    </div>
+    <a class="btn btn-gold" href="https://wa.me/2347083587270?text=Hi%20Epic%20Shawarma%2C%20I%27d%20like%20to%20place%20an%20order" aria-label="Order on WhatsApp">Order</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <p class="eyebrow" style="color:var(--gold)">UYO'S SHAWARMA & GRILL SPOT</p>
+      <h1 class="display">The Shawarma<br>You'll <em>Crave</em><br>Again.</h1>
+      <p class="lede">Freshly made shawarma, grills and loaded combos in Uyo.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://wa.me/2347083587270?text=Hi%20Epic%20Shawarma%2C%20I%27d%20like%20to%20place%20an%20order" style="background:var(--gold); color:var(--ink); box-shadow:0 10px 22px rgba(244,180,0,0.35);">
+          Order Now on WhatsApp
+        </a>
+        <a class="btn btn-outline-light" href="#menu">View Menu</a>
+      </div>
+      <div class="trust-chip">⭐ 4.7/5 from 36+ Google reviews</div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/shawarma-loaded.webp" alt="Loaded shawarma from Epic Shawarma & Grills, Uyo">
+      <div class="cap"><span class="dot"></span> Made fresh, loaded generously</div>
+    </div>
+  </div>
+</header>
+
+<!-- WHY EPIC -->
+<section class="wrap" id="why">
+  <p class="eyebrow">WHY UYO KEEPS COMING BACK</p>
+  <h2 class="section-title display">Why People Choose Epic</h2>
+  <p class="section-sub">Not just another shawarma stop — here's what keeps people ordering.</p>
+  <div class="features">
+    <div class="feature-card">
+      <div class="icon">🔥</div>
+      <div><h3>Fresh & Loaded</h3><p>Generous portions packed with flavour, wrapped fresh per order.</p></div>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🚴</div>
+      <div><h3>Fast Delivery</h3><p>Get your favourites delivered to you, hot and on time.</p></div>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📍</div>
+      <div><h3>Convenient Location</h3><p>Find us at 138 Ikot Ekpene Road, Uyo.</p></div>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⭐</div>
+      <div><h3>Loved by Customers</h3><p>Rated 4.7/5 across 36+ Google reviews from customers in Uyo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST SELLERS -->
+<section class="bestsellers-wrap" id="bestsellers">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--gold)">FAN FAVOURITES</p>
+    <h2 class="section-title display">Best Sellers</h2>
+    <p class="section-sub">Every wrap comes with 2 hotdogs, loaded sauce and fresh veg.</p>
+    <div class="ticket-grid">
+      <div class="ticket">
+        <p class="name">Beef Shawarma</p>
+        <p class="desc">Grilled beef strips, fresh veg and our signature sauce in a warm wrap.</p>
+        <div class="price-row">
+          <span class="price">₦1,900</span>
+          <a class="order-btn" href="https://wa.me/2347083587270?text=Hi%2C%20I%27d%20like%20to%20order%20a%20Beef%20Shawarma">Order Now</a>
+        </div>
+      </div>
+      <div class="ticket orange">
+        <p class="name">Chicken Shawarma</p>
+        <p class="desc">Tender grilled chicken, crisp veg and creamy sauce, wrapped fresh.</p>
+        <div class="price-row">
+          <span class="price">₦2,000</span>
+          <a class="order-btn" href="https://wa.me/2347083587270?text=Hi%2C%20I%27d%20like%20to%20order%20a%20Chicken%20Shawarma">Order Now</a>
+        </div>
+      </div>
+      <div class="ticket gold">
+        <p class="name">Special Shawarma / Combo</p>
+        <p class="desc">Our loaded combo wrap — extra fillings, extra flavour.</p>
+        <div class="price-row">
+          <span class="price">₦2,200</span>
+          <a class="order-btn" href="https://wa.me/2347083587270?text=Hi%2C%20I%27d%20like%20to%20order%20a%20Special%20Shawarma%2FCombo">Order Now</a>
+        </div>
+      </div>
+      <div class="ticket brown">
+        <p class="name">Jumbo Special Shawarma</p>
+        <p class="desc">Our biggest wrap — for when regular size just isn't enough.</p>
+        <div class="price-row">
+          <span class="price">₦2,500</span>
+          <a class="order-btn" href="https://wa.me/2347083587270?text=Hi%2C%20I%27d%20like%20to%20order%20a%20Jumbo%20Special%20Shawarma">Order Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="note-strip">Shawarma without hotdogs comes with extra meat in place of hotdogs.</div>
+  </div>
+</section>
+
+<!-- FULL MENU -->
+<section class="wrap" id="menu">
+  <p class="eyebrow">EAT YOUR WAY THROUGH IT</p>
+  <h2 class="section-title display">Full Menu</h2>
+  <p class="section-sub">Our current shawarma menu below. Grills, combos, drinks and specials are available — message us on WhatsApp for the full spread.</p>
+  <div class="menu-flyer-card">
+    <img src="assets/menu-flyer.webp" alt="Epic Shawarma & Grills menu — Beef Shawarma ₦1900, Chicken Shawarma ₦2000, Special Shawarma/Combo ₦2200, Jumbo Special Shawarma ₦2500">
+  </div>
+  <div class="menu-categories">
+    <span class="cat-pill">Shawarma</span>
+    <span class="cat-pill">Grills</span>
+    <span class="cat-pill">Combos</span>
+    <span class="cat-pill">Drinks</span>
+    <span class="cat-pill">Specials</span>
+  </div>
+  <div class="menu-cta">
+    <p>Want the full menu with grills, combos and drinks? Send us a message and we'll walk you through it.</p>
+    <a class="btn btn-primary btn-block" href="https://wa.me/2347083587270?text=Hi%2C%20can%20I%20see%20your%20full%20menu%3F">Order on WhatsApp</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="wrap" id="gallery">
+  <p class="eyebrow">A LOOK INSIDE THE WRAP</p>
+  <h2 class="section-title display">Food Gallery</h2>
+  <p class="section-sub">A peek at what's coming your way.</p>
+  <div class="gallery-grid">
+    <div class="g-photo">
+      <img src="assets/shawarma-loaded.webp" alt="Close-up of Epic Shawarma loaded wrap with hotdog and sauce">
+    </div>
+    <div class="gallery-tile a"><span>Grills</span></div>
+    <div class="gallery-tile b"><span>Combos</span></div>
+  </div>
+  <div class="ig-strip">
+    <div>
+      <div class="handle">@Epic_shawarma_grills</div>
+      <small>Follow us for today's cravings.</small>
+    </div>
+    <a class="btn btn-gold" href="https://instagram.com/Epic_shawarma_grills" target="_blank" rel="noopener">Follow</a>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="wrap" id="reviews">
+  <p class="eyebrow">WHAT UYO IS SAYING</p>
+  <h2 class="section-title display">Customer Reviews</h2>
+  <div class="reviews-header">
+    <div class="rating-badge">
+      <div class="num">4.7</div>
+      <div class="stars">★★★★★</div>
+      <div class="count">36+ GOOGLE REVIEWS</div>
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>"I did not like Shawarma until I started eating Epic Shawarma. The best shawarma in the whole of Akwa Ibom State!!"</p>
+    <div class="who">Christian Bassey <small>Google review</small></div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>"Epic shawarma is the best. I'm still trying out other shawarma spots in Uyo but Epic is my number one."</p>
+    <div class="who">Mfonido Oku Akpabio <small>Google review</small></div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>"Wonderful customer service, on-time delivery and to top it all up, the best shawarma you'll taste in Uyo."</p>
+    <div class="who">Odiong Kenneth <small>Google review</small></div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>"I don't regret patronizing Epic shawarma. They maintain their quality and delivery is always quick."</p>
+    <div class="who">Tracia John <small>Google review</small></div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>"Best shawarma I've ever eaten in Uyo, by far. Keep it up guys."</p>
+    <div class="who">Henry Owums <small>Google review</small></div>
+  </div>
+</section>
+
+<!-- CRAVING / ORDER -->
+<section id="order">
+  <div class="craving">
+    <p class="eyebrow" style="color:var(--gold)">CRAVING EPIC?</p>
+    <h2 class="display">Your next shawarma is only a WhatsApp message away.</h2>
+    <p>Message us on WhatsApp to place your order — fast replies, faster delivery.</p>
+    <a class="btn btn-gold" href="https://wa.me/2347083587270?text=Hi%20Epic%20Shawarma%2C%20I%27d%20like%20to%20place%20an%20order">Order Now</a>
+    <p class="phone-line">Or call/WhatsApp: 0708 358 7270</p>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="wrap" id="location">
+  <p class="eyebrow">FIND US</p>
+  <h2 class="section-title display">Location</h2>
+  <div class="location-card">
+    <p class="addr">138 Ikot Ekpene Road, Uyo, Akwa Ibom</p>
+    <p class="hours">Open daily · Closes 9:00 PM</p>
+    <div class="loc-buttons">
+      <a class="btn btn-outline btn-block" href="https://www.google.com/maps/search/?api=1&query=Epic+Shawarma+and+Grills+138+Ikot+Ekpene+Road+Uyo" target="_blank" rel="noopener">Google Maps</a>
+      <a class="btn btn-outline btn-block" href="https://wa.me/2347083587270">WhatsApp</a>
+      <a class="btn btn-outline btn-block" href="tel:+2347083587270">Call Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <img src="assets/logo.webp" alt="Epic Shawarma & Grills logo">
+      <span class="fname">Epic Shawarma & Grills</span>
+    </div>
+    <div class="flinks">
+      <a href="https://www.google.com/maps/search/?api=1&query=Epic+Shawarma+and+Grills+138+Ikot+Ekpene+Road+Uyo" target="_blank" rel="noopener">📍 138 Ikot Ekpene Road, Uyo</a>
+      <a href="tel:+2347083587270">📞 0708 358 7270</a>
+      <a href="https://wa.me/2347083587270">💬 WhatsApp</a>
+      <a href="https://instagram.com/Epic_shawarma_grills" target="_blank" rel="noopener">📷 @Epic_shawarma_grills</a>
+    </div>
+    <a class="btn btn-gold btn-block" href="https://wa.me/2347083587270?text=Hi%20Epic%20Shawarma%2C%20I%27d%20like%20to%20place%20an%20order">Order Now</a>
+    <p class="copyline">© 2026 Epic Shawarma & Grills, Uyo. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE ORDER BAR -->
+<div class="sticky-order">
+  <a class="call-btn" href="tel:+2347083587270" aria-label="Call Epic Shawarma">📞</a>
+  <a class="btn btn-primary" href="https://wa.me/2347083587270?text=Hi%20Epic%20Shawarma%2C%20I%27d%20like%20to%20place%20an%20order" style="background:var(--gold); color:var(--ink);">Order on WhatsApp</a>
+</div>
+
+</body>
+</html>
